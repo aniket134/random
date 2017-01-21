@@ -1,6 +1,6 @@
 # install required stuff
 sudo apt-get update
-sudo apt-get install apache2 emacs24-nox git python-pip apache2 libapache2-mod-wsgi
+sudo apt-get install apache2 emacs24-nox git python-pip apache2 libapache2-mod-wsgi python-dev libpq-dev postgresql postgresql-contrib python-psycopg2 libpq-dev
 sudo pip install virtualenv
 
 # make some directories we'll need later
