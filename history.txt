@@ -1,18 +1,21 @@
+# install required stuff
 sudo apt-get update
 sudo apt-get install apache2 emacs24-nox python-pip apache2 libapache2-mod-wsgi
 sudo pip install virtualenv
 
+# make some directories we'll need later
 mkdir .emacs.d
-mkdir code
-mkdir myproj
+mkdir -p code/myproj/static
 
-sudo mv index.html /var/www/
-sudo mv styles.css /var/www/
-mv init.el .emacs.d/
+# get the random repo and move the files to the appropriate location
+cd ~/code/
+git clone https://github.com/aniket134/random.git
+sudo mv random/index.html /var/www/
+sudo mv random/styles.css /var/www/
+mv random/init.el ~/.emacs.d/
 
-cd code/
-cd myproj/
-mkdir static
+# setup django
+cd ~/code/myproj/
 virtualenv env
 source env/bin/activate
 pip install django
